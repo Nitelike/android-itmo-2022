@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/model_size"
+        android:enabled="false"
+        android:title="@string/calculating" />
+    <item
+        android:id="@+id/thumbs_stats"
+        android:enabled="false"
+        android:title="@string/calculating" />
+    <item
+        android:id="@+id/clear_thumbs"
+        android:title="@string/clear_thumbs" />
+    <item
+        android:id="@+id/detail_stats"
+        android:enabled="false"
+        android:title="@string/calculating" />
+    <item
+        android:id="@+id/clear_detail"
+        android:title="@string/clear_detail" />
+    <item
+        android:id="@+id/count_db_entries"
+        android:enabled="false"
+        android:title="@string/calculating" />
+    <item
+        android:id="@+id/clear_db_entries"
+        android:title="@string/clear_db" />
+    <item
+        android:id="@+id/lrid"
+        android:enabled="false"
+        android:title="@string/calculating" />
+    <item
+        android:id="@+id/reset_lrid"
+        android:title="@string/reset_lrid" />
+    <item
+        android:id="@+id/check_id_order"
+        android:title="@string/check_order" />
+    <item
+        android:id="@+id/go_up"
+        android:title="@string/go_up" />
+    <item
+        android:id="@+id/go_down"
+        android:title="@string/go_down" />
+
+</menu>

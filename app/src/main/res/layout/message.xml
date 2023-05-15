@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.databinding.ObservableField" />
+
+        <variable
+            name="message"
+            type="com.not_example.network_1ch.MessageUiData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/message_background"
+        android:padding="4dp">
+
+        <LinearLayout
+            android:id="@+id/message_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flow_verticalAlign="center"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/message_from"
+                style="@style/message_detailpart"
+                android:text="@{message.from}"
+                tools:text="@string/template_message_from" />
+
+            <TextView
+                android:id="@+id/message_time"
+                style="@style/message_detailpart"
+                app:time="@{message.time}"
+                tools:text="@string/template_message_timestamp" />
+
+            <TextView
+                android:id="@+id/message_id"
+                style="@style/message_detailpart"
+                android:text="@{@string/message_id(message.id)}"
+                tools:text="@string/template_message_id" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="@{(message.image == null) &amp;&amp; (message.text == null) ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message_details"
+            tools:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/message_pic"
+            android:layout_height="300dp"
+            android:layout_width="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_border"
+            android:contentDescription="@string/thumb_image_description"
+            android:padding="5dp"
+            android:visibility="@{message.text == null ? View.VISIBLE : View.GONE}"
+            app:bitmap="@{message.image}"
+            app:detail_activity="@{message.detail}"
+            app:message_ui_data="@{message}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message_details"
+            tools:src="@drawable/the_truth_about_life"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/message_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/trebuchetms"
+            android:padding="10dp"
+            android:text="@{message.text}"
+            android:textColor="#333"
+            android:textSize="15sp"
+            android:visibility="@{message.text != null ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@id/message_pic"
+            tools:text="@string/template_message_text"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.not_example.network_1ch.ImageDetailModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <RelativeLayout
+            android:id="@+id/progressIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="@{model.image == null ? View.VISIBLE : View.GONE}" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/detail_image_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@{model.imageLink}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/image_detail_view"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/detail_link_example" />
+
+        <ImageView
+            android:id="@+id/image_detail_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/image_detail_description"
+            app:bitmap="@{model.image}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_image_link"
+            tools:src="@drawable/the_truth_about_life" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

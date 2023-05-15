@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">1ch</string>
+    <string name="message_id">№%1$d</string>
+    <string name="thumb_image_description">Preview image</string>
+    <string name="image_detail_description">Full image</string>
+    <string name="message_input_hint">Message</string>
+    <string name="template_message_from">Аноним</string>
+    <string name="template_message_timestamp">24/10/22 Пнд 22:58:40</string>
+    <string name="template_message_id">№2497488</string>
+    <string name="template_message_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="null_message">NULL MESSAGE</string>
+    <string name="swipe_hint">Swipe to load messages</string>
+    <string name="clear_thumbs">Clear thumbs</string>
+    <string name="clear_detail">Clear detail</string>
+    <string name="calculating">Calculating…</string>
+    <string name="reset_lrid">Reset LRID</string>
+    <string name="check_order">Check order</string>
+    <string name="detail_link_example">Joe Biden/data/user/0/com.not_example.network_1ch/cache/img8826534968715289987.png</string>
+    <string name="clear_db">Clear DB</string>
+    <string name="go_down">Go down</string>
+    <string name="scroll_down">Scroll down</string>
+    <string name="go_up">Go up</string>
+    <string name="generic_http_error">HTTP error: %1$s. Source: %2$s.</string>
+    <string name="http_500">Internal server error</string>
+    <string name="http_404">Not found</string>
+    <string name="http_409">Found an image with the same name (try sending it again)</string>
+    <string name="http_413">Too large image</string>
+    <string name="http_wtf">http wtf</string>
+    <string name="http_5xx">5xx server error</string>
+</resources>
